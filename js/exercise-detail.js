@@ -5,8 +5,7 @@ if (!id) {
   alert("ไม่พบ exercise id");
   throw new Error("Missing id");
 }
-
-fetch(`http://localhost:3000/api/exercises/${id}`)
+fetch(`/api/exercises/${id}`)
   .then(res => {
     if (!res.ok) throw new Error("Exercise not found");
     return res.json();
@@ -18,14 +17,10 @@ fetch(`http://localhost:3000/api/exercises/${id}`)
     muscleBar.textContent = data.muscle.toUpperCase();
     muscleBar.className = `muscle-bar ${data.muscle}`;
 
-    // name
     document.getElementById("exerciseName").textContent = data.name;
 
-    // image
-    document.getElementById("exerciseImage").src =
-      `http://localhost:3000${data.image}`;
+    document.getElementById("exerciseImage").src = data.image;
 
-    // description
     document.getElementById("exerciseDesc").textContent = data.description;
 
     // steps
