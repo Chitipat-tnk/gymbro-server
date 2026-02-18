@@ -1,8 +1,13 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-fetch(`http://localhost:3000/api/exercises/${id}`)
-  .then(res => res.json())
+fetch(`/api/exercises/${id}`)
+  .then(res => {
+    if (!res.ok) {
+        throw new Error("Network response was not ok");
+    }
+    return res.json();
+  })
   .then(data => {
     document.getElementById("exercise-name").textContent = data.name;
     document.getElementById("exercise-image").src = data.image;
