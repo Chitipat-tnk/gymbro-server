@@ -18,7 +18,7 @@ async function askAI() {
   aiAnswer.innerHTML = " กำลังคิดคำตอบ...";
 
   try {
-    const res = await fetch("http://localhost:3000/api/ask-ai", {
+    const res = await fetch("/api/ask-ai", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question })
@@ -26,7 +26,6 @@ async function askAI() {
 
     const data = await res.json();
     
-    // ใช้ marked.parse() แปลงข้อความจาก AI ให้เป็น HTML
     if (data.answer) {
         aiAnswer.innerHTML = marked.parse(data.answer);
     } else {
