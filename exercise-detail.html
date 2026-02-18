@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise Detail</title>
+  <link rel="stylesheet" href="./css/exercise-detail.css" />
+</head>
+<body>
+
+<a class="back" onclick="history.back()">←</a>
+
+<!-- muscle bar -->
+<div class="muscle-bar" id="muscleBar"></div>
+
+<!-- image -->
+<div class="image-wrap">
+  <img id="exerciseImage" alt="exercise">
+</div>
+
+<!-- name -->
+<div class="exercise-name" id="exerciseName"></div>
+
+<!-- description -->
+<div class="description" id="exerciseDesc"></div>
+
+<!-- steps -->
+<section class="steps">
+
+  <div class="step">
+    <h3>1. ท่าเริ่มต้น (Setup)</h3>
+    <ul id="setupList"></ul>
+  </div>
+
+  <div class="step">
+    <h3>2. จังหวะลง (Eccentric Phase)</h3>
+    <ul id="eccentricList"></ul>
+  </div>
+
+  <div class="step">
+    <h3>3. จังหวะขึ้น (Concentric Phase)</h3>
+    <ul id="concentricList"></ul>
+  </div>
+
+</section>
+
+<script src="./js/exercise-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #222;
+}
+
+.topbar {
+  background: #0a4da2;
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.back {
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+}
+
+.muscle {
+  margin: 30px auto;
+  width: 92%;
+}
+
+.muscle h2 {
+  background: #0a4da2;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* ===== CARD ===== */
+.exercise-card {
+  background: white;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.exercise-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+.exercise-card span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.exercise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+}
+
+@media (min-width: 768px) {
+  .exercise-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .muscle {
+    width: 85%;
+  }
+
+  .topbar h1 {
+    font-size: 20px;
+  }
+}
+
+.section-title {
+  background: #0a4da2;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 14px 0;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.exercise-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 80px;
+}
+
+.exercise-item {
+  text-decoration: none; 
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.exercise-item img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.exercise-item span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222;
+}
+
+/* ===== RESPONSIVE GUIDE ===== */
+@media (max-width: 900px) {
+  .exercise-list {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .exercise-item img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .exercise-item span {
+    font-size: 18px;
+  }
+}
+

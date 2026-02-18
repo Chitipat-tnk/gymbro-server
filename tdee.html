@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>คำนวณค่า TDEE</title>
+  <link rel="stylesheet" href="./css/tdee.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="back-btn">←</a>
+</header>
+
+<main class="tdee-container">
+
+  <!-- INFO -->
+  <section class="info">
+    <h2>โปรแกรมคำนวณ TDEE คืออะไร</h2>
+    <p>
+      โปรแกรม <strong>TDEE Calculator</strong> คือเครื่องมือคำนวณพลังงานที่ร่างกายใช้ต่อวัน  
+      (Total Daily Energy Expenditure) เพื่อช่วยให้คุณสามารถวางแผน
+      <strong>ลดน้ำหนัก คุมน้ำหนัก หรือเพิ่มน้ำหนัก</strong> ได้อย่างเหมาะสม
+    </p>
+
+    <h2>วิธีใช้โปรแกรมคำนวณ TDEE</h2>
+    <ul>
+      <li>เลือกเพศ</li>
+      <li>กรอกอายุ ส่วนสูง และน้ำหนัก</li>
+      <li>เลือกระดับกิจกรรมที่ทำในแต่ละสัปดาห์</li>
+      <li>กดปุ่ม <strong>คำนวณ</strong> เพื่อดูผลลัพธ์</li>
+    </ul>
+
+    <h2>พลังงานทั้งหมด (TDEE)</h2>
+    <p>
+      TDEE คือพลังงานรวมที่ร่างกายใช้ในแต่ละวัน  
+      รวมทั้งการหายใจ การเคลื่อนไหว และการออกกำลังกาย  
+      ค่า TDEE จะช่วยให้คุณกำหนดปริมาณแคลอรี่ที่เหมาะสมกับเป้าหมายของคุณ
+    </p>
+  </section>
+
+  <section class="form-card">
+
+    <div class="form-group">
+      <label>เพศ</label>
+      <div class="gender">
+        <button class="gender-btn active" data-gender="male">ชาย</button>
+        <button class="gender-btn" data-gender="female">หญิง</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>อายุ</label>
+      <input type="number" id="age" placeholder="ปี">
+    </div>
+
+    <div class="form-group">
+      <label>ส่วนสูง</label>
+      <input type="number" id="height" placeholder="cm">
+    </div>
+
+    <div class="form-group">
+      <label>น้ำหนัก</label>
+      <input type="number" id="weight" placeholder="kg">
+    </div>
+
+    <div class="form-group">
+      <label>กิจกรรม</label>
+      <select id="activity">
+        <option value="">เลือกระดับกิจกรรม</option>
+        <option value="1.2">ไม่ออกกำลังกาย</option>
+        <option value="1.375">ออกกำลังกาย 1-3 วัน/สัปดาห์</option>
+        <option value="1.55">ออกกำลังกาย 3-5 วัน/สัปดาห์</option>
+        <option value="1.725">ออกกำลังกายหนัก</option>
+      </select>
+    </div>
+
+    <button id="calculateBtn" class="calculate-btn">คำนวณ</button>
+  </section>
+
+  <section class="result" id="resultSection">
+    <h2>พลังงานที่ต้องการในแต่ละวัน (TDEE)</h2>
+    <div class="tdee-number" id="tdeeValue"></div>
+
+    <div class="goal">
+      <p> ลดน้ำหนัก: <span id="cut"></span> kcal / วัน</p>
+      <p> คุมน้ำหนัก: <span id="maintain"></span> kcal / วัน</p>
+      <p> เพิ่มน้ำหนัก: <span id="bulk"></span> kcal / วัน</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="./js/tdee.js"></script>
+</body>
+</html>

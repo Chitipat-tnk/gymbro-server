@@ -1,3 +1,6 @@
+const path = require("path");
+app.use(express.static(path.join(__dirname)));
+
 require("dotenv").config();
 console.log("🔑 GEMINI KEY:", process.env.GEMINI_API_KEY ? "Found ✅" : "Not Found ❌");
 
@@ -721,10 +724,6 @@ app.post("/api/ask-ai", async (req, res) => {
     console.error("❌ Gemini error:", err);
     res.status(500).json({ error: "Gemini API error", details: err.message });
   }
-});
-
-app.get('/', (req, res) => {
-  res.send('Gymbro Server is running 🚀');
 });
 
 // ================== start server ==================

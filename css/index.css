@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #222;
+}
+
+.navbar {
+  background: #0a4da2;
+  color: white;
+  padding: 16px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo span {
+  letter-spacing: 1px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.menu a.active {
+  opacity: 1;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 4px;
+}
+
+.hero {
+  margin: 50px auto;
+  width: 80%;
+  background: linear-gradient(135deg, #0a4da2, #083b7a);
+  color: white;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  opacity: 0.9;
+}
+
+.ai-box {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+.ai-box input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+.ai-box button {
+  padding: 14px 26px;
+  border-radius: 10px;
+  border: none;
+  background: #ffcc00;
+  color: #222;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ai-box button:hover {
+  background: #ffdb4d;
+}
+
+.ai-answer {
+  margin-top: 25px;
+  background: #ffffff;
+  color: #333333;
+  border-radius: 12px;
+  padding: 25px;
+  min-height: 60px;
+  font-size: 16px;
+  line-height: 1.8; /* เพิ่มระยะห่างบรรทัดให้อ่านง่าย */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ai-answer strong {
+  color: #0a4da2; /* ตัวหนาสีน้ำเงิน */
+  font-weight: 700;
+}
+
+.ai-answer ul, .ai-answer ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.ai-answer li {
+  margin-bottom: 8px;
+}
+
+.ai-answer p {
+  margin-bottom: 15px;
+}
+
+/* ===== CARDS SECTION ===== */
+.cards {
+  margin: 70px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #111;
+  border-radius: 18px;
+  overflow: hidden;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 18px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
