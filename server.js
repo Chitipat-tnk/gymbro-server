@@ -723,6 +723,10 @@ app.post("/api/ask-ai", async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('Gymbro Server is running 🚀');
+});
+
 // ================== start server ==================
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
