@@ -16,11 +16,15 @@ const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
 
 app.use(cors());
 app.use(express.json());
-// ================== serve images ==================
+
 app.use(
   "/images",
   express.static(path.join(__dirname, "../images"))
 );
+
+// ================== serve frontend ==================
+app.use(express.static(path.join(__dirname, "..")));
+
 
 // ================== mock data ==================
 const exercises = [
