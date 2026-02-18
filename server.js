@@ -13,10 +13,8 @@ console.log("🔑 GEMINI KEY:", process.env.GEMINI_API_KEY ? "Found ✅" : "Not 
 app.use(cors());
 app.use(express.json());
 
-// serve frontend (ไฟล์ html css js ทั้งหมดอยู่ใน server folder)
 app.use(express.static(path.join(__dirname)));
 
-// serve images
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
