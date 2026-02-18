@@ -648,7 +648,7 @@ const exercises = [
 
 // ================== API ==================
 
-// get all exercises (filter by muscle ได้)
+// get all exercises 
 app.get("/api/exercises", (req, res) => {
   const { muscle } = req.query;
 
@@ -671,7 +671,7 @@ app.get("/api/exercises/:id", (req, res) => {
   res.json(exercise);
 });
 
-//---API AI (Scope)---//
+//---API AI //
 app.post("/api/ask-ai", async (req, res) => {
   try {
     const { question } = req.body;
