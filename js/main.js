@@ -1,5 +1,8 @@
-fetch("http://localhost:3000/api/exercises")
-  .then(res => res.json())
+fetch("/api/exercises")
+  .then(res => {
+    if (!res.ok) throw new Error("Failed to fetch exercises");
+    return res.json();
+  })
   .then(exercises => {
     const container = document.getElementById("exercise-list");
 
@@ -8,7 +11,7 @@ fetch("http://localhost:3000/api/exercises")
 
       div.innerHTML = `
         <h2>${ex.name}</h2>
-        <img src="http://localhost:3000${ex.image}" width="300">
+        <img src="${ex.image}" width="300" alt="${ex.name}">
         <p>${ex.description}</p>
         <a href="guide-chest.html?id=${ex.id}">ดูรายละเอียด</a>
         <hr>
@@ -16,4 +19,5 @@ fetch("http://localhost:3000/api/exercises")
 
       container.appendChild(div);
     });
-  });
+  })
+  .catch(err => console.error("Error loading exercises:", err));
